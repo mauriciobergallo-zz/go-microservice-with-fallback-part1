@@ -20,22 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7fb3089-77e3-4399-9c12-9c2cc9fd4874" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cmd/server/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/adapters/mock-file-server/adapter.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/adding/service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/adding/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/deleting/service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/deleting/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/deletingFallback/service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/handlers/rest.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/listing/service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/listing/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/logging/log.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/logging/service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/storage/memory/repository.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/storage/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/updating/service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/updating/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/deletingFallback/service.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/deletingFallback/service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/handlers/rest.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/handlers/rest.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +56,7 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/cmd/server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
@@ -107,7 +94,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DlvLineBreakpoint">
           <url>file://$PROJECT_DIR$/pkg/handlers/rest.go</url>
-          <line>27</line>
+          <line>26</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

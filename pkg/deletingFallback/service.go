@@ -41,7 +41,8 @@ func (s *service) RemoveUsersFallback() error {
 		err = s.fs.DeleteFile(u.ID)
 		if err != nil {
 			s.l.Error("DeletingFallbackService", err.Error())
-			return err
+			// We will not do anything.
+			continue
 		}
 
 		err = s.r.DeleteUser(u.ID)

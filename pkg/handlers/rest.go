@@ -20,7 +20,6 @@ func NewRestService(as adding.Service, ds deleting.Service, us updating.Service,
 	r.POST("/api/users", rest.postUser)
 	r.DELETE("/api/users/:id", rest.deleteUser)
 	r.PUT("/api/users/:id", rest.putUser)
-	r.DELETE("/api/users/fallback", rest.deleteFallback)
 
 	r.Run()
 }
@@ -70,13 +69,30 @@ func (rs *restService) postUser(c *gin.Context) {
 }
 
 func (rs *restService) deleteUser(c *gin.Context) {
+	// GIN Gonic does not support a routing like "api/users/fallback" it
+	// throw a panic because there is another route that match the same url
+	if c.Param("id") == "fallback" {
+		err := rs.deletingFallbackService.RemoveUsersFallback()
+		if err != nil {
+			c.JSON(500, gin.H{
+				"status":  "InternalServer",
+				"message": err.Error(),
+			})
+			return
+		}
+
+		c.JSON(200, gin.H{
+			"status": "ok",
+		})
+		return
+	}
+
 	id, err := uuid.Parse(c.Param("id"))
 	if err != nil {
 		c.JSON(400, gin.H{
 			"status":  "BadRequest",
 			"message": err.Error(),
 		})
-
 		return
 	}
 
@@ -86,14 +102,12 @@ func (rs *restService) deleteUser(c *gin.Context) {
 			"status":  "InternalServer",
 			"message": err.Error(),
 		})
-
 		return
 	}
 
 	c.JSON(202, gin.H{
 		"status": "ok",
 	})
-
 	return
 }
 
@@ -134,24 +148,6 @@ func (rs *restService) putUser(c *gin.Context) {
 	c.JSON(200, gin.H{
 		"status": "ok",
 		"data":   uu,
-	})
-
-	return
-}
-
-func (rs *restService) deleteFallback(c *gin.Context) {
-	err := rs.deletingFallbackService.RemoveUsersFallback()
-	if err != nil {
-		c.JSON(500, gin.H{
-			"status":  "InternalServer",
-			"message": err.Error(),
-		})
-
-		return
-	}
-
-	c.JSON(200, gin.H{
-		"status": "ok",
 	})
 
 	return
